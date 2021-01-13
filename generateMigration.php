@@ -67,7 +67,7 @@ class ProvinceComuniTable extends Migration {
 
 		Schema::create('{$comuniTableName}', function(Blueprint \$table)
 		{
-			\$table->smallInteger('id')->unsigned();
+			\$table->integer('id')->unsigned();
             \$table->string('{$nomeColumnName}');
             \$table->tinyInteger('{$provinciaIdColumnName}')->unsigned();
 
@@ -86,7 +86,7 @@ foreach($province as $provincia)
     $body .='["id" => "'.$provincia['id'].'", "'. $nomeColumnName .'" => "'.$provincia['nome'].'", "'. $codiceColumnName .'" => "'.$provincia['codice'].'"],';
     
 }
-
+$body = rtrim($body, ",");
 $body .=']);' . PHP_EOL;
 
 
@@ -96,6 +96,7 @@ foreach($comuni as $comune)
     $body .='["id" => "'.$comune['id'].'", "'. $nomeColumnName .'" => "'.$comune['nome'].'", "'. $provinciaIdColumnName .'" => "'.$comune['provincia_id'].'"],';
 }
 
+$body = rtrim($body, ",");
 $body .=']);' . PHP_EOL;
 
 $body .= <<<BISARK

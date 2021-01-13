@@ -31,3 +31,8 @@ Risultato
     			 \$table->tinyInteger('id')->unsigned();
     	 		 \$table->string('nome');
 				 ...
+
+
+### Possibili problematiche
+
+Se si riscontrano errori di _Class Not Found_ durante la migrazione o il rollback, eseguire il comando `composer dump-autoload`.
