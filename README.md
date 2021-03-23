@@ -2,7 +2,7 @@
 
 Lo scopo del progetto è quello di rendere disponibile in maniera rapida e personalizzabile un file migrazione per Laravel 5+ con tutti i comuni e le province italiane creato a partire dall'[Elenco dei codici e delle denominazioni delle unità territoriali](https://www.istat.it/it/archivio/6789#Elencodeicodiciedelledenominazionidelleunitterritoriali-0) reso disponibile dall'ISTAT.
 
-*Ultimo aggiornamento: 28 giugno 2019*
+*Ultimo aggiornamento: 20 febbraio 2021*
 # Utilizzo
 
 Il modo più semplice di utilizzare il progetto è quello di scaricare il file *Y_m_d_His_province_comuni_table.php* e copiarlo all'interno della cartella del progetto Laravel *database/migrations*, sostituendo ove necessario la data presente nel nome del file.
