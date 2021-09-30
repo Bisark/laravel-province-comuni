@@ -32,10 +32,10 @@ while (($data = fgetcsv($handle, 0, ";")) !== FALSE) {
     $comuni[] = ['id' => intval($data[4]), 'nome' => utf8_encode($data[5]), 'provincia_id' => intval($data[2])];
 
     if(!isset($province[$data[2]]))
-        $province[$data[2]] = ['id' => intval($data[2]), 'nome' => utf8_encode($data[11]), 'codice' => $data[13]];
+        $province[$data[2]] = ['id' => intval($data[2]), 'nome' => utf8_encode($data[11]), 'codice' => $data[14]];
 
     $row++;
-    
+
 }
 fclose($handle);
 
@@ -84,7 +84,7 @@ $body .='\DB::table("'. $provinceTableName .'")->insert([';
 foreach($province as $provincia)
 {
     $body .='["id" => "'.$provincia['id'].'", "'. $nomeColumnName .'" => "'.$provincia['nome'].'", "'. $codiceColumnName .'" => "'.$provincia['codice'].'"],';
-    
+
 }
 $body = rtrim($body, ",");
 $body .=']);' . PHP_EOL;
